@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.demo3.app.dao.UserDao;
+import com.example.demo3.app.repository.UserRepository;
 import com.example.demo3.app.entity.UserEntity;
 import com.example.demo3.app.model.UserBo;
 import com.example.demo3.app.service.UserService;
@@ -27,8 +27,6 @@ public class UserController {
 
 	@Autowired
 	private UserService userservice;
-	@Autowired
-	private UserDao userdao;
 	
 	@RequestMapping(method = RequestMethod.GET, value ="/{id}/{name}")
 	@ResponseBody
@@ -60,7 +58,7 @@ public class UserController {
 	public ResponseEntity<?> getAllUser(HttpServletRequest request, 
 			HttpServletResponse response){
 		
-		Iterable<UserEntity> userlist = userdao.findAll();
+		List<UserEntity> userlist = userservice.findAll();
 		
 		
 		return new ResponseEntity<>(userlist,HttpStatus.OK);
@@ -79,5 +77,7 @@ public class UserController {
 		return null;
 		
 	}
+	
+	
 
 }
