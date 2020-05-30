@@ -63,6 +63,25 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- 同步請求HttpClient協議 -->
+<dependency>
+<groupId>org.apache.httpcomponents</groupId>
+<artifactId>httpclient</artifactId>
+<version>4.5.9</version>
+</dependency>
+<!-- 非同步請求httpasyncclient協議 -->
+<dependency>
+<groupId>org.apache.httpcomponents</groupId>
+<artifactId>httpasyncclient</artifactId>
+<version>4.1.4</version>
+</dependency>
+<!-- 單元測試 -->
+<dependency>
+<groupId>junit</groupId>
+<artifactId>junit</artifactId>
+<version>4.12</version>
+<scope>test</scope>
+</dependency>
 	</dependencies>
 
 	<build>

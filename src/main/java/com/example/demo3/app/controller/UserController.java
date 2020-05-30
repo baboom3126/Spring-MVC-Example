@@ -28,7 +28,7 @@ public class UserController {
 	@Autowired
 	private UserService userservice;
 	
-	@RequestMapping(method = RequestMethod.GET, value ="/{id}/{name}")
+	@RequestMapping(method = RequestMethod.POST, value ="/{id}/{name}")
 	@ResponseBody
 	public ResponseEntity<?> setUser(HttpServletRequest request, 
 			HttpServletResponse response, @PathVariable String id, @PathVariable String name) {
@@ -78,6 +78,14 @@ public class UserController {
 		
 	}
 	
+	@RequestMapping(value="/list")
+	public String userlistPage() {
+		return "userlist";
+	}
 	
+	@RequestMapping(value="/new")
+	public String usernewPage() {
+		return "usernew";
+	}
 
 }
